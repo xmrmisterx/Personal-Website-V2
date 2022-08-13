@@ -1,0 +1,61 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Mount Townsend</title>
+</head>
+
+<div class="topnav">
+
+  <a href="index.html">Home</a>
+  <a href="Kilimanjaro.html">Kilimanjaro</a>
+  <a href="Mount Kenya.html">Mount Kenya</a>
+  <a href="Mount Elbrus.html">Mount Elbrus</a>
+  <a href="Dykh-Tau.html">Dykh-Tau</a>
+  <a href="Denali.html">Denali</a>
+  <a href="Mount Logan.html">Mount Logan</a>
+  <a href="Mount Aconcagua.html">Mount Aconcagua</a>
+  <a href="Ojos del Salado.html">Ojos del Salado</a>
+  <a href="Mount Everest.html">Mount Everest</a>
+  <a href="K2.html">K2</a>
+  <a href="Vinson Massif.html">Vinson Massif</a>
+  <a href="Mount Tyree.html">Mount Tyree</a>
+  <a href="Mount Kosciuszko.html">Mount Kosciuszko</a>
+  <a class="active" href="Mount Townsend.html">Mount Townsend</a>
+  <a href="download.html">Download</a>
+  
+</div>
+<br>
+<br>
+
+<body>
+  <img src= alt="Mount Townsend Pic" id="Img">
+  <br>
+  <br>
+    <p1>
+        Mount Townsend, a mountain in the Main Range of the Great Dividing Range, is located in the Snowy Mountains region of New South Wales, Australia.
+
+With an elevation of 2,209 metres (7,247 ft) above sea level,[1] Mount Townsend is the second-highest peak of mainland Australia. Located in Kosciuszko National Park, the mountain is 3.68 kilometres (2.29 mi) north of Australia's highest mainland peak, Mount Kosciuszko.
+
+Although lower than Mount Kosciuszko, Mount Townsend has a more craggy peak and is arguably more dominant than the relatively round-topped Mount Kosciuszko.
+
+The confusion about swapping the names of Mount Kosciuszko and Mount Townsend was straightened out in 1940 by B. T. Dowd,[3] a cartographer and historian of the NSW Lands Department. His study reaffirmed that the mountain named by Strzelecki as Mount Kosciuszko was indeed, as the NSW maps had always shown, Australia's highest summit. When Macarthur's field book of the historical journey was published in 1941 by C. Daley [4] it further confirmed Dowd's clarification. This means that Targangil, mentioned in Spencer's 1885 article,[5] was the indigenous name of Mount Townsend, not of Mount Kosciuszko.
+
+Mount Townsend has a prominence of only 189m which is relatively low compared to other mountains worldwide. In the more stricter prominence cut off points, the most common of which being the 300m prominence rule, Townsend would not be classified as its own mountain, and instead a subsidiary peak. Due to Australia's much flatter topography than all other continents a prominence cut off point of 300m is almost never used instead opting for less strict definitions of 50m or 100m when classifying peaks. If using the 300m rule this makes Mount Bogong in Victoria the second highest mountain.
+    <cite>[From Wikipedia]</cite>
+  </p1>
+
+    <link rel="stylesheet" href="styles.css">
+    <script>
+
+      var req = new XMLHttpRequest;
+      req.open("GET", "https://cryptic-dusk-31004.herokuapp.com/scraper/Mount_Townsend", false);
+      req.send(null);
+      img_url = req.responseText;
+      document.getElementById("Img").src = img_url;
+
+    </script>
+</body>
+
+</html>

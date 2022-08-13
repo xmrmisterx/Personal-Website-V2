@@ -1,0 +1,59 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Ojos del Salado</title>
+</head>
+
+<div class="topnav">
+
+  <a href="index.html">Home</a>
+  <a href="Kilimanjaro.html">Kilimanjaro</a>
+  <a href="Mount Kenya.html">Mount Kenya</a>
+  <a href="Mount Elbrus.html">Mount Elbrus</a>
+  <a href="Dykh-Tau.html">Dykh-Tau</a>
+  <a href="Denali.html">Denali</a>
+  <a href="Mount Logan.html">Mount Logan</a>
+  <a href="Mount Aconcagua.html">Mount Aconcagua</a>
+  <a class="active" href="Ojos del Salado.html">Ojos del Salado</a>
+  <a href="Mount Everest.html">Mount Everest</a>
+  <a href="K2.html">K2</a>
+  <a href="Vinson Massif.html">Vinson Massif</a>
+  <a href="Mount Tyree.html">Mount Tyree</a>
+  <a href="Mount Kosciuszko.html">Mount Kosciuszko</a>
+  <a href="Mount Townsend.html">Mount Townsend</a>
+  <a href="download.html">Download</a>
+  
+</div>
+<br>
+<br>
+
+<body>
+  <img src= alt="Ojos del Salado Pic" id="Img">
+  <br>
+  <br>
+    <p1>
+        Nevado Ojos del Salado is an active stratovolcano in the Andes on the Argentina–Chile border and the highest active volcano in the world at 6,893 m (22,615 ft).[3] It is also the second highest mountain in both the Western Hemisphere and the Southern Hemisphere behind Aconcagua at approximately 7,000 meters (23,000 ft) and it is the highest in Chile.
+
+Due to its location near the Atacama Desert, the mountain has very dry conditions, with snow usually remaining on the peak only during winter, though heavy storms can cover the surrounding area with a few feet of snow even in summer. Despite the generally dry conditions, there is a permanent crater lake about 100 m (330 ft) in diameter at an elevation of 6,390 m (20,960 ft) on the eastern side of the mountain.[4] This is most likely the highest lake of any kind in the world.
+
+The ascent of Ojos del Salado is mostly a hike until the final section to the summit, which is a difficult scramble that may require ropes. The first ascent was made in 1937 by Jan Alfred Szczepański and Justyn Wojsznis, members of a Polish expedition in the Andes.
+
+An international highway between Chile and Argentina runs north of the mountain.[5]
+    <cite>[From Wikipedia]</cite>
+  </p1>
+
+    <link rel="stylesheet" href="styles.css">
+    <script>
+
+      var req = new XMLHttpRequest;
+      req.open("GET", "https://cryptic-dusk-31004.herokuapp.com/scraper/Ojos_del_Salado", false);
+      req.send(null);
+      img_url = req.responseText;
+      document.getElementById("Img").src = img_url;
+
+    </script>
+</body>
+
+</html>

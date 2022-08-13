@@ -1,0 +1,59 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>K2</title>
+</head>
+
+<div class="topnav">
+
+  <a href="index.html">Home</a>
+  <a href="Kilimanjaro.html">Kilimanjaro</a>
+  <a href="Mount Kenya.html">Mount Kenya</a>
+  <a href="Mount Elbrus.html">Mount Elbrus</a>
+  <a href="Dykh-Tau.html">Dykh-Tau</a>
+  <a href="Denali.html">Denali</a>
+  <a href="Mount Logan.html">Mount Logan</a>
+  <a href="Mount Aconcagua.html">Mount Aconcagua</a>
+  <a href="Ojos del Salado.html">Ojos del Salado</a>
+  <a href="Mount Everest.html">Mount Everest</a>
+  <a class="active" href="K2.html">K2</a>
+  <a href="Vinson Massif.html">Vinson Massif</a>
+  <a href="Mount Tyree.html">Mount Tyree</a>
+  <a href="Mount Kosciuszko.html">Mount Kosciuszko</a>
+  <a href="Mount Townsend.html">Mount Townsend</a>
+  <a href="download.html">Download</a>
+  
+</div>
+<br>
+<br>
+
+<body>
+  <img src= alt="K2 Pic" id="Img">
+  <br>
+  <br>
+    <p1>
+        K2, at 8,611 metres (28,251 ft) above sea level, is the second-highest mountain on Earth, after Mount Everest (at 8,849 metres (29,032 ft)).[3] It lies in the Karakoram range, in part in the Gilgit-Baltistan region of Pakistan-administered Kashmir and in part in a China-administered territory of the Kashmir region included in the Taxkorgan Tajik Autonomous County of Xinjiang.[4][5][6]
+
+K2 also became popularly known as the Savage Mountain after George Bell—a climber on the 1953 American Expedition—told reporters, "It's a savage mountain that tries to kill you."[7] Of the five highest mountains in the world, K2 is the deadliest; approximately one person dies on the mountain for every four who reach the summit.[7][8] Also occasionally known as Chhogori, or Mount Godwin-Austen,[9] other nicknames for K2 are The King of Mountains and The Mountaineers' Mountain,[10] as well as The Mountain of Mountains after prominent Italian climber Reinhold Messner titled his book about K2 the same.[11]
+
+The summit was reached for the first time by the Italian climbers Lino Lacedelli and Achille Compagnoni, on the 1954 Italian Expedition led by Ardito Desio. In January 2021, K2 became the final eight-thousander to be summited in the winter; the mountaineering feat was accomplished by a team of Nepalese climbers, led by Nirmal Purja and Mingma Gyalje Sherpa.[12][13]
+
+K2 is the only 8,000+ metre peak that has never been climbed from its eastern face.[14] Ascents have almost always been made in July and August, which are typically the warmest times of the year; K2's more northern location makes it more susceptible to inclement and colder weather.[15] The peak has now been climbed by almost all of its ridges. Although the summit of Everest is at a higher altitude, K2 is a more difficult and dangerous climb, due in part to its more inclement weather.[16] As of February 2021, only 377 people have completed the ascent to its summit.[17] There have been 91 deaths during attempted climbs, according to the list maintained on the list of deaths on eight-thousanders.
+    <cite>[From Wikipedia]</cite>
+  </p1>
+
+    <link rel="stylesheet" href="styles.css">
+    <script>
+
+      var req = new XMLHttpRequest;
+      req.open("GET", "https://cryptic-dusk-31004.herokuapp.com/scraper/K2", false);
+      req.send(null);
+      img_url = req.responseText;
+      document.getElementById("Img").src = img_url;
+
+    </script>
+</body>
+
+</html>

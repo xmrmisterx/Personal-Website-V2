@@ -1,0 +1,21 @@
+{
+  "name": "personal-website",
+  "version": "1.0.0",
+  "description": "personal-website",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "Bobby Nguyen",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.21.4",
+    "body-parser": "^1.13.3",
+    "cors": "^2.8.5",
+    "express": "^4.13.2",
+    "express-handlebars": "^2.0.1",
+    "express-session": "^1.11.3",
+    "forever": "^4.0.0",
+    "mysql": "^2.18.1"
+  }
+}

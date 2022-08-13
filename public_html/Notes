@@ -1,0 +1,272 @@
+-Ok, so this page is for combining all our projects into one. The first thing we want to do, is write a function that pings all our 
+heroku apps every 30 mins so that we don't have to wait for the sites to load, then we want to link our 3 current websites and test to
+make sure they respond and are not sleeping
+-remember for public html, it's "chmod 755 [file name]" to make the file public 
+-that's odd, so we go into our workout page console to find the address (we should be logging into heroku instead and get all the app 
+addresses, but we see that it's actually requesting from the flip1 server, wtf? let's look at the workout log frontend again)
+-actually , we don't want to make the pinger from this page, bc we want http, so put it in one of our other apps that uses http? yeah,
+we put it in our mountain backend page
+-ok, so the first thing we want to do now, is to create a little blurb and link all our our pages
+-***ok, so what are some ideas for our website? we want a side menu (instead of the horizontal menu we've been doing), with options for 
+"home" "websites" "games" and maybe other options as we think of them, we want slideshows of each website and game on the main page, and
+slideshows of websites and games separately on the websites and games pages, yeah that sounds pretty good
+-ok, so what do we need for a slideshow? we need to take pics of each of our 3 websites for the website slideshow, and obv for the games
+as well... since we actually have a verified account, can we make more apps and just make this another heroku app, since we'll always want a personal website, but might not always have this engr account? yeah verified accounts can make up to 100 apps, so we can make our
+app here, can create it to another site, when the time comes I guess
+-ok, so we have the slideshow code in our SW site, let's go ahead and copy it here and work on it
+-ok, so for the website, we want to get images of the websites, so let's wait a bit, and then we can get the images, and put it into our
+slide html (we also would want to link the pages on the picture, can we do that?)... so currently we have an img element, so we want to
+enclose the img element in an "a" element, which we can reference to a link, so something like this "<a href="[site link]"><img src=
+"smiley.gif" alt="HTML tutorial" style="width:42px;height:42px;"></a>"
+-***actually, now that we think about it, I like the idea of an Intro section, a Website section, and a Games section on the main page,
+ with the websites and games clickable images that link to the site/game in columns (cols of 3 probably), then the website and games 
+ pages can have slideshows instead... for each website and game, we can write a little blurb about it, like what we have in our resume
+-interesting, so apparently h1 tag in html is bigger, and as we move on in the headers, they decrease in size, wtf? so we actually want 
+all h1 headers if we want the same size I guess
+-the top looks kinda bare, we can put navigation up there, or maybe a pic, although I'm not sure what kinda pic we'd even want, ok, so 
+instead of doing columns, we can use articles? which apparently can break it up into 3 columns, like this code we found:
+
+ 63              <div id="news-items">
+ 64                  <header><h2>The latest news</h2></header>
+ 65  
+ 66                  <div id="item_1">
+ 67                      <article>
+ 68                          <header>
+ 69                              <img src="#" title="titel artikel" />
+ 70                              <h3>Lorem ipsum .....</h3>
+ 71                          </header>
+ 72                          <p>Lorem ipsum dolor sit amet,
+ 73                          adipiscing elit. Quisque semper, </p>
+ 74                          <a href="#">Read more</a>
+ 75                      </article>
+ 76                  </div>
+ 77  
+ 78  
+ 79                  <div id="item_2">
+ 80                      <article>
+ 81                          <header>
+ 82                              <img src="#" title="titel artikel" />
+ 83                              <h3>Lorem ipsum .....</h3>
+ 84                          </header>
+ 85                          <p>Lorem ipsum dolor sit amet,
+ 86                          adipiscing elit. Quisque semper, </p>
+ 87                          <a href="#">Read more</a>
+ 88                      </article>
+ 89                  </div>
+ 90  
+ 91  
+ 92                  <div id="item_3">
+ 93                      <article>
+ 94                          <header>
+ 95                              <img src="#" title="titel artikel" />
+ 96                              <h3>Lorem ipsum .....</h3>
+ 97                          </header>
+ 98                          <p>Lorem ipsum dolor sit amet,
+ 99                          adipiscing elit. Quisque semper, </p>
+100                          <a href="#">Read more</a>
+101                      </article>
+102                  </div>
+103              </div>
+
+- ok, so during our lunch break, we looked at some things that could convert python to browser, and it didn't seem that easy, we've
+bookmarked a couple of the best options, including repl, trinket, pys, bropython (ideally repl can handle our janggi game, since we 
+have other languages and repl is adjustable for languages)... interesting, so we though our huge ass code from janggi woldn't work, 
+but it goes ito the repl fine, that problem is, the screen is bunched up, and the coordinates are squished onto 2 lines instead of 1, 
+I wonder if there's a way to fix that? Damn, so we just tried the game again and yeah, it plays fine, it's just hard to look at bc the
+replit half the page, yeah, this is actually pretty cool and promising, we just need to play around with it a little more I guess
+- we added a header before our h1 and changed them to h1 and h2, but that look is different sizing, so we don't want that, the header 
+section didn't really do anything
+- interesting, so putting the h1's instead of section made the h1s smaller, which kind of made sense, but yeah, I don't think we have
+to worry about this... basically, we're trying to create 3 columns, can we do that with the div element?
+-interesting, so we're getting our columns to work, but the link directs from the current page, and we don't want that, so we need to
+add 'target="_blank" rel="noopener noreferrer"' after the web address of the anchor tag
+-ok, that worked, good, now we want to make that image way smaller, how do we that? to change the image size, we can use the style 
+code after the image alt name
+-ok, so we have all the images and links lined up, but it looks kinda cramped in a 3 column format, maybe just 1 per column is fine?
+looking over this, yeah, just having the page scroll down is fine. Also, I don't think we want the links on the images. Not only are 
+the images big, but images you don't really know to click, whereas hyperlinks you can click and know that you're going to another page
+intuitively
+-lol, our pages headers look exactly like the personal page headers, so let's make them underlined or something to make them stand out
+-ok, so we have the pages up with the images and their links (we do need to remove the column stuff), so now let's write descriptions
+for each website, then put the games in and create a left navigation bar
+-interesting, so we put in our tic tac toe code, and it works, but there's some weird error when an invalid coordinate is selected, it
+seems the game checks to see if the coordinates are valid, and it checks a "nil" value, but we are getting this rejection "no implicit
+ conversion of nil into Array (TypeError)"
+ -hangman doesn't seem to be playable since it wants to read a file, we should just include the file in the game, it's the text file I 
+ think
+ -ok, so we edited the look of our websites, and they look good now. Now we just have to get our games to work, starting with Janggi
+ -interesting, so we were able to create a Replit account (we already had one from doing some coding before I think) and created our 
+ Janggi replit, and it's almost the right size. We just need to resize it a little. With that said, it was very easy since it was in a 
+ link, just like the websites and such. Ok, so we want to embed the replit, instead of linking to it, since the embedded one we can adjust the game screen, so how do we do that? oh snap! we can embed it, and select the size of the screen with the html size things, however, on chrome, we had to "enable third party cookies" we were blocking it before... also, this is the original path for our replit
+ "https://replit.com/@xmrmisterx/Janggi-Korean-Chess-Game?v=1", but we had to use "<iframe frameborder="0" width="100%" height="500px" src="https://replit.com/@xmrmisterx/Janggi-Korean-Chess-Game?lite=1&outputonly=1"></iframe>" to get it to display without our code. If
+ we want the code in there, then use "?lite=1" instead of "?lite=1&outputonly=1" at the end
+ -ok cool, it looks like our Janggi game is working, which we didn't think we'd be able to do by today... let's try to get our tic tac 
+ toe up, we need to fix error when a wrong coordinate is used... maybe google that replit nil error before actually changing our ruby 
+ code?
+-ok, so we actually figured out what was strong, it was some string conversoin in the tic tac toe game, and we realized that when the
+wrong coordinates where picked, it didn't loop back, so we added a "redo" phrase after saying the coordinates are not valid, there was
+also a "retry", but that didn't do what we wanted
+-now, we see that the computer keeps picking random coordinates that are already picked, so can we, after we convert the coordinate and
+it's valid, remove it from the available coordinates so that the computer never "accidentally" picks a coordinate already taken? 
+interesting, so it looks like our code is already doing that, but maybe we are removing the values incorrectly, since they are still in
+the available coordinates array after being picked.
+-lol, we add tic tac toe, but now our local host page isn't loading, how nice, however, our main page from the engr site does load, which is good bc we can still test it
+-ok, we went over our website alot and I think we are almost there, we just need to add the dictionary to our hangman game and upload it, then update our resume with our pharmacy job and website and we can start applying for more internships
+-ok, so now we're onto our hangman ruby game, and we run it in the test replit for the ruby language, and it looks like the error is 
+saying that, we don't  have the "5desk.txt" file, so how do we include a file in a replit, can we just add a file?
+-ok, so there seems to be some issue generating our word array from the text file, and we're having a hard time testing it bc the file is so big, so let's change the file to a few words to test it, then go back to the big file once we figure out what the problem is
+-ok, so using a smaller file reveals that our "words array" is being made correctly, but when we create the "filtered words array", that's when we have a nil array, so something is going on there... in the filtered words array function, we have this line "words_array.select {|word| (5..12) === word.length}", and maybe that's not working, so put a puts in there and see
+-actually, looking over our code more, it seems like the issue is actually our words array? here is what we printed out for it... "words array: ["mother\nload\ncracker"]", so its just one big array, which is probably why when we try to select for 5 to 12 length words in our filtered word array function, it doesn't return anything "words_array.select {|word| (5..12) === word.length}", ok, let's
+see what our file is read as and then see how we're splitting it
+-ok, so here is our initial text from the text file "mother\nload\ncracker", so we want to split this, just split at the '\n', and currently our code for splitting is "words.split("\r\n")", so we are splitting at the \r too, so it's not doing anything.
+-ok, good, so changing "words.split("\r\n")" to "words.split("\n")" solved our problem, and now our game is running... so we try to load
+a game, just to see if it works, but obv nothing loaded bc we don't have anything saved, now let's try to play a game, and load and save, and see if that works, interesting, so loading the game when there's no saved file results in an error, so let's actually add a saved file so they load a blank game is it's the beginning?
+-ok, so in our load game function, we check to see if they type load and then we load the game, but we want to check to see if there is
+a saved game file, and if not, just continue with a new game, so how do we check if there's a file? google says its "file.exist?" actually I think the format for the code is "File.exist? '[file name]'", so we  had forgotten a paranthesis around the and part of this
+file exists clause, but once we added it, the code seems to work, if the player has a saved game, it loads it, if not, it just starts a new game and doesn't break the game
+-ok, so here is the link to our hangman game, we didn't publish this one yet, bc we couldn't find the publish button, let's add it to 
+our index in an iframe and see if we even need to publish for it to show, and if not, remove the publishing from the previous 2 games...
+"https://replit.com/@xmrmisterx/Hangman-Game"
+-yeah, so hangman runs fine without having published it, and I think we like the look, well we don't like the look of the code there, but as a demonstration of what we can do, yeah we'd want the code there. it's better for them to access it there, they don't have to go to our github, which might mean something, with that said, we also want to link our github files for the websites on our personal page as well, so they can see everything
+-ok, so first off, let's clean up our resume by adding our work experience, GPA, and our website, then we can modify our website as desired when convenient
+-as we're looking at our website, we forgot that we wanted to put borders on some images, or maybe all the images. We can also add the
+calculator to our site as well
+-ok, we added the borders, and it took way longer than we thought, finding the right color, and centering the images took a while
+-ok, *** so what do we want to do now? let's clone our heroku code to our github, then link those githubs by the website links in our personal website, then maybe we can add our calculator on there as well? Make sure we clean up our front end and back end code before
+uploading to github, or we can just delete the comments after uploading, but definitely clean it up (we can transfer the notes from the js files into our notes file if we want to keep the notes), afterwards, let's apply to the big tech companies (Google, Amazon, etc...)
+-so we were thinking, maybe no all caps the categories and use lists instead, let's see how that looks,also we want an image for the top of the personal page as well, maybe something gears related?
+-ok, so I think we have the structure that we want, with the headers and the unordered lists for the sites and games, then another batch
+of lists for the site links, let's try ordered lists and see how they look relatively... yeah, I think we like the unordered bullet points better than the numbers, since the numbers aren't really significant
+-let's get an image for the top of the site now, then remove unnecessary stuff and upload those website files to our github
+-man, that gear image took a while, a while to find one we liked (an also free and public) and a while just to see the style we like on top
+- let's clean up all our website codes, resubmit to heroku cloud, then clone those into our github
+- ok, so we've cleaned up and resubmitted all the code to heroku, then cloned it to our github, now, let's test all the sites again to
+make sure they are workign, then insert them as unordered lists links into our index.html... we also need to create a github for this
+personal website once we are done
+-ok, our websites are working, so let's put them as links into index.html, then we can create a repository for this personal website page as well
+-ok, so we get on github, and our files are still no there on the left side for I guess most recent files, it's still those annoying
+files we weren't able to delete, so we google "delete Github repository" and it says to go to "settings" and scroll down to "Danger Zone" and then delete the repository (we have to type in the repository directory to confirm). I'm not sure why we couldn't do that before, but that's how we deleted those unnecessary files
+-we just remembered something, after we branched? off to our github from the heroku github, we weren't able to call "git push heroku master", we had to use "git push heroku main" which did update the heroku file, but not the github file, so remember that
+-so the workout log frontend was bad to look add, so we added some styling to it, and it looks a lot better now, let's review our content, then upload this as a file to our github as well
+-ok, so we were looking at our page, and the inner and outer lists having round bullets looked bad, so we set up a class for the inner
+"ul" lists and set them to have square bullets
+-interesting, so previously this git under this public html folder was under the "mountain website" git, so when we tried the command
+"git remote add origin https://github.com/xmrmisterx/Personal-Website.git" we got a "fatal: remote origin already exists" error. To resolve this, we had to "git remote rm origin", then we could "git remote add origin https://github.com/xmrmisterx/Personal-Website.git" and "git push -u origin main"
+-alright, so the file is uploaded, I think we wanted to do everything we wanted on our personal website, we can start studying with leetcode again
+-*** here is our Calculator blurb in our resume that we removed "Utilized HTML, CSS, and Javascript to create a calculator. Javascript code includes math functions, event listeners for the calculator buttons, and proper calculator logic."
+-ugh, so we logged into our heroku apps "billing" info and we see that yesterday was at about 40 hours and today at about 80 hours, so 
+yeah, if we don't combine everything, we will have to pay for the heroku service, and it's $7 per dyno per month
+-so last night, we were thinking how to consolidate into just one heroku app, which means we'll have enough free dyno hours, first off, let's turn off our pinging function so that we have enough hours? yeah, let's do that first
+-alright, so yeah, here are some ideas of what to do to consolidate, I think in the end, it's possible just to have one heroku backend,
+before we do this, does another company give free websites? it might take us some time to learn, so I'm not sure we want to go that route?
+-*** anyways, we had issues with the menu items for each separate website, so our idea for the menus is to link each project on the left, and then as sublinks, we could have all the horizontal menu stuff on the new left vertical main menu, which means we can put the mountain website and SW website onto our personal page just fine, I mean, we can put all the websites on there. So, the next issue is, we need to consolidate our 2 backends. Currently, the bigger one, the workout log backend, has all the requests used, but can't we just use another get request route and add in the web scraper for the mountain site? I think this should be possible, and if so, it shouldn't take too long. Finally, there's the issue of what to put on the home page, since these things will be removed from the home page, and the idea is, to just put a lot of things in a slideshow, so that the links are the same, but the websites are shown in a different way
+-ok, so before we change everything, let's see if we can combine our 2 backends into 1. let's go to the big backend page, and add the image scraper, so copy the image scraper code, and bring it to the workout log backend
+-ok, so we were able to add the scraper route to our workout log backend, now, let's test the workout log and the mountain site to see if the backend is working, we first need to update the mountain front end to query the right route, which is "https://cryptic-dusk-31004.herokuapp.com/scraper/[query string]"
+-*** so when we added the scraper route, we also took the opportunity to add "dbcon.js" to our gitignore, we did that by simply typing into the gitignore file on the next line "dbcon.js", then we had to run the git command "git rm --cached [file name]" to remove it from the current git, then we just added it and commited it through git "git add ." and "git commit -m "[commit message]"
+-alright, so we updated the frontend mountain website with the new scraper route, and everything seems to work, now we just have to move
+the 3 websites onto this public html folder
+-ok, first, let's create a vertical side menu, then we'll move the SW site over... ok, so we see several ways to make a vertical sidebar, but this one with the menu, seems like the best, so let's try it
+-so we copy the code, but the menu does not look like the sample menu, there's no table of contents looking thing, which is very confusing, ok, we see, the span for the menu actually uses different styling, which we copied, so I think it looks fine now, we just have to adjust the sizes and colors, also, what we want, is an actual list of items right
+-ok, so the side push thing of the vertical menu is pretty cool, and it looks better than the side menu just blocking the rest of the 
+page, and I think we've added the links for the vertical menu fine, however, there aren't any bullest for the lists, and I'm not sure why, is it bc of the black background? Removing the styling of the links for the menu shows that the bullets are there, but they are black, so we can't see them on the black background, so let's make the background a different color, like blue or green or something. Hmmm, now that we changed the color to something else besides black, we see the bullet points, and I'm not sure we like the bullet points there, so maybe keeping it black is better? I think our current issue with the links inside the outer links, is that the text is too big and there aren't any bullets? We want some clear delineation that the inner links are part of the outer link, so the website links are part of Website, we have the spacing, we can add bullet points, and we can make the font smaller?
+-hmmm... there's actually a demo for the drop down button, so let's look at that, man, this is getting really complicated, let's just
+make the text a little smaller for the menu items? Man, we're having a hard time getting the dropdown button to work, let's just discard it and try to change the text size of the others? ok, so we made the subcategories be italicized, which looks better, but we'd really like to collapse them and uncollapse them
+-I think what we want is the hover dropdown, but we are having a hard time combining the side menu and the hover dropdown bc the Home
+link is not a dropdown and it looks off vs the dropdowns
+-So we tried to accordion menu on Google, and it does what we want, but our previous menu looks good and is really cool, so we don't think the accordion one is better at all. Let's try to get this to work with the dropdown.
+-We really want to get the links to drop down for websites and games, but not sure how to do that yet, so let's move on and first import SW review in (we're thinking for each category we make a slideshow, then the individual links will go to that specific page?)
+-ok, we actually figured it out, by looking at stackoverflow, we needed an extra list for the first menu items, and for the classes we want a dropdown and a dropdown container. however, our dropdowns block the next item, which is really bad, how do we push the item down or display without blocking
+-hmmm, what if we move the display more to the right? damit, we can't do it and it's getting late
+-we want to have the dropdown display move the next element, how do we do that? Let's look at the wc3schools "dropdown menu in sidenav" again and see why there's moves down
+-our current sidenav that we are saving 
+
+"/* The container <div> - needed to position the dropdown content */
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: outside;
+}
+
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #ddd;}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {display: block;}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {background-color: #3e8e41;}
+"
+-that's interesting, so removing the hidden display property of our content shows that it is actually blocking the link at the end, but why is that?
+-ok, so if we remove all the css, we see our list and it looks fine, but we just want to hide our "a" elements inside the dropdown container until hovered right? let's make them hidden then? 
+-man, we're trying a lot of stuff, but nothing is working, let's remove lists and use divs?
+-honestly don't understand why this is so hard, but we can't get it to hover and move the next elements down... but we have an example of it moving down with the dropdown click example, so let's try to use the dropdown click example? Yeah, let's modify the dropdown click example since it already moves stuff down?
+-this is so annoying, we can't find that stackoverflow post again, where it had what we liked and tried to use, a list to make the links, what the hell did we type in the search box?
+-well, we found another example, that uses lists, and it has html, css, and js, so let's try it
+-alright, we still can't get it, using that stackoverflow example, let's go back to the dropdown clickable instead of hover menu, interesting, so we try that code, but none of the links are showing? that's so weird, now we can't get anything to show up, wtf?
+-jesus, this is crazy, that code doesn't work, and before it was, but not fully, now we can't see our menu at all, so annoying... let's try the accordion menu again?
+-ok, we're really tired of doing this hover menu, let's move on and bring in our pages
+-first, let's importthe sw fansite page
+-wait a minute! so, we just opened up another page, which is what we wanted to do when we redirect them, and it goes to another page, but the page is still inside our public html, so we don't have to redo all the menus, which means we don't need another menu? yeah, I think it might work like this... ok, I think our SW fansite is linked, now let's try the workout page
+-yes, the workout page worked just fine, god I wish we had tried this before making the side menu, bc it doesn't look like we need to make a side menu bc it just "links" to the other page, without using another page
+-wow, we can't get over how easy this was, and here we were trying to do the side menu, and spent so much time on it, like 3 days or at least the weekend, and we imported these 3 sites in like 15 mins, testing time included ugh feels bad
+-ok, so, we've managed to consolidate everything into 1 heroku website, but now, now that's it's in one site, let's get that app the setInterval function, then remove all the other apps
+-alright, we got the setInterval function up, now, let's remove all the other apps and only keep cryptic dusk
+-so that's funny, before we removed the other websites, we wanted to do one final test on our real website and SW and Workout Log didn't load, we got that forbidden message, so we did "chmod 755 [file name]", but it wasn't that easy, we have to type in the correct directory first, before we could tab out the whole name, I wonder if there's a way to chmod the whole folder, but we had to do each file one by one
+-hmmm, so we actually tested everything on the site, and the hangman game didn't work for some reason, but when we reloaded the page, it did load, so that's kinda disturbing, we know that we didn't "publish" hangman, so maybe that could be the issue, but it worked on reload, so we'll keep it as being fine for now
+-ok, so we deleted every app except our cryptic dusk one, where the backend is, so I think we are set now. To delete, we clicked on each app in our Heroku dashboard, then went to "Settings" and scrolled all the way down and hit "Delete app", which made us type the name of each app before we could delete it
+-ohhh, if we add a margin left to the side menu drop down content, it does move to the left, but it's being blocked by the side menu lol
+-ok, so we clipped this part out of our resume, and we want to save it:
+-
+"INTERESTING FACTOID
+
+-Before learning any coding language, I tried to write a couple of games on Unity. This lasted for more than a year, with me Googling every aspect of what the game needed and learning code on the fly. I was pretty ambitious and tried to make the games have an online person vs person mode, but I had no idea about networking code. Neither game ended up being released, but it was a memorable first foray into coding.
+"
+-interesting, so we removed our ssh key associated with our regular github account, and used the school one I think, and now when we try
+to log into this public html, it asks for our password twice and we have to do the duo identification, which is a little bit of a hassle
+but if our data saves, then we're OK with that, since we need the other SSH key for our current classes. We notice we can't access the
+terminal though, so not sure what's going on there. Let's try to save this and see what happens. Ok, it looks like it saved, which is
+great, but where's our terminal? We had to click the '+' sign and click bash to see it, but, it's still here, so yeah, it's kinda 
+annoying we have to type in our password twice and do the duo phone verification, but we don't have to remove and delete the SSH key,
+which is probably better, alright, now let's do what we came here for.
+-ok, so we were thinking, we want to improve our moutain website with a couple of things... a) put an image searcher on the main page, and before that, describe how the web site is using our image scraper to get the mountain images b) rewrite the html code to use unordered lists for the listing of mountains heights, and maybe improve the API code to not use global variables (google an example of how to use an API call to get data in javascript?)
+-ok, so we wrote up a cover letter, and this is the part we removed, these are the main points we want to go over in each cover letter:
+"[have a strong opening statement that says a) why we want the job b) what we bring to the table. Make the cover letter specific to that job posting]
+[another website has the 3 main points being a) how candidate’s work experience meets job requirements b) how candidate’s skills meet job requirements c) why candidate wants to work at organization]"
+-so we've been thinking about what we want to do some more, and I think we should remove the work experience from our resume and from
+our website, bc they might be prejudiced against not too young interns, it might give us more interviews I'd think
+-so we realized we were giving the old links to our projects in our resume (can't believe we've been sending these out) and not the new
+links that are embedded in our website, so we fixed it, and one of the links, is actually inside the page, our Janggi game in the middle
+of the page, but one thing we learned, is that we can give the html element and "id=<some name>" and then append that to the URL of the
+page where that part of the page is, and when the page loads, it goes directly to that part, which is really cool. So, we added an "id=
+Games" to our Games h1 header, then we set the hyperlink to "https://web.engr.oregonstate.edu/~nguyenbo/#Games" and it goes directly to
+the games part of our page.
+-hmmm. so we're trying to change the color of the text after adding list elements for the country names, but it's not doing anything, it
+seems like our code isn't doing anytyhing? wtf? we keep changing stuff around and it's not doing anything? It's really weird, we're 
+changing the code and it doesn't seem to do anything to the look of the page. Interesting, so now doing the port and testing the website
+out on the bottom right actually correctly loads the page, but the other way doesn't. Maybe the code isn't being updated? Ugh, isn't our
+code set heroku? No, the heroku is just the backend part, this should all be saved, but it's not saving. Anyways, "li a {color:white}"
+does work, just the stupid thing isn't updating for whatever reason. Maybe bc we already clicked on it and it's forever hyperlinked as
+purple, not sure. Now, let's fix all our links to lists that are white. Well, that's awkward, we change everything according to our local port test, but on the website, the text isn't white. So annoying, we deleted all the old code lmao. Hmmm... why are the folder's
+all blue, did we not give access to them? Ugh, that wasn't the issue. Manually changing the color works, but still, really annoying.
+-ok, we need to remove the global variable in the get request when we have time

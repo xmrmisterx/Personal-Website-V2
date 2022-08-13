@@ -1,0 +1,53 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Dykh-Tau</title>
+</head>
+
+<div class="topnav">
+
+  <a href="index.html">Home</a>
+  <a href="Kilimanjaro.html">Kilimanjaro</a>
+  <a href="Mount Kenya.html">Mount Kenya</a>
+  <a href="Mount Elbrus.html">Mount Elbrus</a>
+  <a class="active" href="Dykh-Tau.html">Dykh-Tau</a>
+  <a href="Denali.html">Denali</a>
+  <a href="Mount Logan.html">Mount Logan</a>
+  <a href="Mount Aconcagua.html">Mount Aconcagua</a>
+  <a href="Ojos del Salado.html">Ojos del Salado</a>
+  <a href="Mount Everest.html">Mount Everest</a>
+  <a href="K2.html">K2</a>
+  <a href="Vinson Massif.html">Vinson Massif</a>
+  <a href="Mount Tyree.html">Mount Tyree</a>
+  <a href="Mount Kosciuszko.html">Mount Kosciuszko</a>
+  <a href="Mount Townsend.html">Mount Townsend</a>
+  <a href="download.html">Download</a>
+  
+</div>
+<br>
+<br>
+
+<body>
+  <img src= alt="Dykh-Tau Pic" id="Img">
+  <br>
+  <br>
+    <p1>
+        Dykh-Tau or Dykhtau (Russian: Дыхтау, Karachay-Balkar: Дых тау that is derived from Turkic "dik dagh" which means Jagged Mount), is a mountain located in Kabardino-Balkaria, Russia; its peak stands about 5 km (3 mi) north of the border with Georgia. Dykh-Tau is the second highest of the Caucasus Mountains, after Mount Elbrus, and is the second highest mountain in Europe.
+    <cite>[From Wikipedia]</cite>
+  </p1>
+
+    <link rel="stylesheet" href="styles.css">
+    <script>
+
+      var req = new XMLHttpRequest;
+      req.open("GET", "https://cryptic-dusk-31004.herokuapp.com/scraper/Dykh-Tau", false);
+      req.send(null);
+      img_url = req.responseText;
+      document.getElementById("Img").src = img_url;
+
+    </script>
+</body>
+
+</html>

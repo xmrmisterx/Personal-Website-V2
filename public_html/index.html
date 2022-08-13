@@ -1,0 +1,143 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>My Website</title>
+  <link rel="stylesheet" href="home_styles.css">
+</head>
+
+<body>
+
+  <!--- Side Menu -->
+  
+  <!-- <div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
+    <ul>
+      <a href="#">Home</a>
+    </ul>
+    <ul class="dropdown">
+      <a href="#">Websites</a>
+      <ul class="dropdown-content">  
+        <li><a href="#"><em>Workout log</em></a></li>
+        <li><a href="#"><em>World's tallest mountains</em></a></li>
+        <li><a href="#"><em>Summoners war review</em></a></li>
+      </ul>
+    </ul>
+    <ul class="dropdown">
+      <a href="#">Games</a>
+      <ul class="dropdown-content">  
+        <li><a href="#"><em>Janggi</em></a></li>
+        <li><a href="#"><em>Tic tac toe</em></a></li>
+        <li><a href="#"><em>Hangman</em></a></li>
+      </ul>
+    <ul>
+  </div> -->
+  
+  <!-- Use any element to open the sidenav -->
+
+  <!-- <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Menu</span> -->
+  
+  <!-- Add all page content inside this div if you want the side nav to push page content to the right (not used if you only want the sidenav to sit on top of the page -->
+
+  <div id="main">
+
+    <!---Top image-->
+
+    <img class="top_image" src="transparent-gears-12.jpg" alt="gear image">
+    <br></br>
+
+    <!---Intro-->
+
+    <p>My name is Bobby Nguyen and this is my website. I live in Denver, CO and currently attend Oregon State University in
+      pursuit of a degree in computer science. Below are some the websites and games that I've made. 
+    </p>
+    <h1>Websites</h1>
+      <ul>
+        <li>
+          <p>Developed a mountain website that uses Wikipedia’s API as an image scraper.
+            Demonstrates knowledge of front and back end development, ability to
+            make and handle API requests, and proficiency in Javascript, HTML, and
+            CSS.<p>
+          <img class="site_image" src=
+            "World's Tallest Mountains edited.png" alt="World's Tallest Mountains Image">
+          <br></br>
+          <ul class="innerList">
+            <li><a href="World's_Tallest_Mountains/index.html" target="_blank" 
+              rel="noopener noreferrer">World's Tallest Mountains Website</a>
+            </li>
+            <li><a href="https://github.com/xmrmisterx/Mountain-Site-Frontend" target="_blank" 
+              rel="noopener noreferrer">World's Tallest Mountains Frontend Code</a>
+            </li>
+            <li><a href="https://github.com/xmrmisterx/Mountain-Site-Backend" target="_blank" 
+              rel="noopener noreferrer">World's Tallest Mountains Backend Code</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <p>Created a fan site for the mobile game Summoner's War. Shows knowledge of Javascript, HTML, and CSS. Main features
+            include an automatic/manual slideshow and columns with scrollable text.
+          </p>
+          <img class="site_image" src="Summoner's War Review edited.png" alt="Summoner's War Review Image">
+          <br></br>
+          <ul class="innerList">
+            <li><a href="Summoner's_War_Review/index.html" target="_blank" rel="noopener noreferrer">
+              Summoner's War Review Website</a>
+            </li>
+            <li><a href="https://github.com/xmrmisterx/Summoners-War-Review" target="_blank" rel="noopener noreferrer">
+              Summoner's War Review code</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <p>Implemented a workout log that tracks workouts by name, date, reps, and weight. Workouts can be edited and deleted
+            in a single click. Used a mySQL database on Heroku for the backend. Demonstrates knowledge of databases, the frontend and 
+            backend, and how to communicate between them. Also shows competence with Javascript, HTML, and CSS.
+          </p>
+          <img class="site_image" src="Workout Log edited.png" alt="Workout Log Image">
+          <br></br>
+          <ul class="innerList">
+            <li><a href="Workout_Log/index.html" target="_blank" rel="noopener noreferrer"
+              >Workout Log Website</a>
+            </li>
+            <li><a href="https://github.com/xmrmisterx/Workout-Log-Frontend" target="_blank" 
+              rel="noopener noreferrer">Workout Log Frontend Code</a>
+            </li>
+            <li><a href="https://github.com/xmrmisterx/Workout-Log-Backend" target="_blank" 
+              rel="noopener noreferrer">Workout Log Backend Code</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    <h1 id="Games">Games</h1>
+      <ul>
+        <li>
+          <p>Janggi is a Korean variant of chess. The game can be played with a keyboard versus the computer. This project demonstrates 
+            the ability to display a game board, use multiple classes and have them interact, implement game logic for checkmate, create a 
+            play loop that alternates turns between players, and develop AI code for the computer's moves.</p>
+          <p>Note: Accept third party cookies in your browser settings for the Replit to load properly. Once the Replit
+            has loaded, click on the "run" button to start the game.</p>
+          <em>Janggi</em>      
+          <iframe frameborder="0" width="100%" height="500px" src="https://replit.com/@xmrmisterx/Janggi-Korean-Chess-Game?lite=1">
+          </iframe>
+        </li>
+        <li>
+          <p>A Tic Tac Toe implementation in the Ruby language. Developed code to create a board, track the game pieces, and check 
+            for three in a row.</p>
+          <em>Tic Tac Toe</em>
+          <iframe frameborder="0" width="100%" height="500px" src="https://replit.com/@xmrmisterx/Tic-Tac-Toe-Game?lite=1">
+          </iframe>
+        </li>
+        <li>
+          <p>The classic Hang Man game also done in Ruby. Code shows the ability to read and process files and to use the YAML module in Ruby 
+            to save and load games.
+          </p>
+          <em>Hangman</em>
+          <iframe frameborder="0" width="100%" height="500px" src="https://replit.com/@xmrmisterx/Hangman-Game?lite=1">
+          </iframe>
+        </li>
+      </ul>
+  <script src="home_script.js"></script>
+</body>
+</html>

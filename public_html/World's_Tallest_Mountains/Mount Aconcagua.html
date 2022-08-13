@@ -1,0 +1,54 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Mount Aconcagua</title>
+</head>
+
+<div class="topnav">
+
+  <a href="index.html">Home</a>
+  <a href="Kilimanjaro.html">Kilimanjaro</a>
+  <a href="Mount Kenya.html">Mount Kenya</a>
+  <a href="Mount Elbrus.html">Mount Elbrus</a>
+  <a href="Dykh-Tau.html">Dykh-Tau</a>
+  <a href="Denali.html">Denali</a>
+  <a href="Mount Logan.html">Mount Logan</a>
+  <a class="active" href="Mount Aconcagua.html">Mount Aconcagua</a>
+  <a href="Ojos del Salado.html">Ojos del Salado</a>
+  <a href="Mount Everest.html">Mount Everest</a>
+  <a href="K2.html">K2</a>
+  <a href="Vinson Massif.html">Vinson Massif</a>
+  <a href="Mount Tyree.html">Mount Tyree</a>
+  <a href="Mount Kosciuszko.html">Mount Kosciuszko</a>
+  <a href="Mount Townsend.html">Mount Townsend</a>
+  <a href="download.html">Download</a>
+  
+</div>
+<br>
+<br>
+
+<body>
+  <img src= alt="Mount Aconcagua Pic" id="Img">
+  <br>
+  <br>
+  <p1>
+    Aconcagua (Spanish pronunciation: [akoŋˈkaɣwa]) is a mountain in the Principal Cordillera[3] of the Andes mountain range, in Mendoza Province, Argentina. It is the highest mountain in the Americas, the highest outside Asia,[4] and the highest in both the Southern and the Western Hemispheres[1] with a summit elevation of 6,961 metres (22,838 ft). It lies 112 kilometres (70 miles) northwest of the provincial capital, the city of Mendoza, about five kilometres (three miles) from San Juan Province, and 15 km (9 mi) from Argentina's border with neighbouring Chile.[5] The mountain is one of the so-called Seven Summits of the seven continents.
+
+    Aconcagua is bounded by the Valle de las Vacas to the north and east and the Valle de los Horcones Inferior to the west and south. The mountain and its surroundings are part of the Aconcagua Provincial Park. The mountain has a number of glaciers. The largest glacier is the Ventisquero Horcones Inferior at about 10 km (6 mi) long, which descends from the south face to about 3,600 m (11,800 ft) in altitude near the Confluencia camp.[6] Two other large glacier systems are the Ventisquero de las Vacas Sur and Glaciar Este/Ventisquero Relinchos system at about 5 km (3 mi) long. The most well known is the north-eastern or Polish Glacier, as it is a common route of ascent.
+  </p1>
+  <cite>[From Wikipedia]</cite>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+
+      var req = new XMLHttpRequest;
+      req.open("GET", "https://cryptic-dusk-31004.herokuapp.com/scraper/Aconcagua", false);
+      req.send(null);
+      img_url = req.responseText;
+      document.getElementById("Img").src = img_url;
+
+    </script>
+</body>
+
+</html>

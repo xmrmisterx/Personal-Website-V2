@@ -1,0 +1,54 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Mount Elbrus</title>
+</head>
+
+<div class="topnav">
+
+  <a href="index.html">Home</a>
+  <a href="Kilimanjaro.html">Kilimanjaro</a>
+  <a href="Mount Kenya.html">Mount Kenya</a>
+  <a class="active" href="Mount Elbrus.html">Mount Elbrus</a>
+  <a href="Dykh-Tau.html">Dykh-Tau</a>
+  <a href="Denali.html">Denali</a>
+  <a href="Mount Logan.html">Mount Logan</a>
+  <a href="Mount Aconcagua.html">Mount Aconcagua</a>
+  <a href="Ojos del Salado.html">Ojos del Salado</a>
+  <a href="Mount Everest.html">Mount Everest</a>
+  <a href="K2.html">K2</a>
+  <a href="Vinson Massif.html">Vinson Massif</a>
+  <a href="Mount Tyree.html">Mount Tyree</a>
+  <a href="Mount Kosciuszko.html">Mount Kosciuszko</a>
+  <a href="Mount Townsend.html">Mount Townsend</a>
+  <a href="download.html">Download</a>
+  
+</div>
+<br>
+<br>
+
+<body>
+  <img src= alt="Mount Elbrus Pic" id="Img">
+  <br>
+  <br>
+  <p1>
+    Mount Elbrus (Russian: Эльбру́с, tr. Elbrus, IPA: [ɪlʲˈbrus]; Karachay-Balkar: Минги тау, romanized: Mingi Taw; Kabardian: Ӏуащхьэмахуэ, romanized: Oshhamakhue) is the highest and most prominent peak in Russia and Europe. It is situated in the western part of the Caucasus and is the highest peak of the Caucasus Mountains. The dormant volcano rises 5,642 m (18,510 ft) above sea level; it is the highest stratovolcano in Eurasia, as well as the tenth-most prominent peak in the world.[6] The mountain stands in Southern Russia, in the Russian republic of Kabardino-Balkaria.
+
+    Elbrus has two summits, both of which are dormant volcanic domes. The taller, western summit is 5,642 metres (18,510 ft);[2] the eastern summit is 5,621 metres (18,442 ft). The eastern summit was first ascended on 10 July 1829 by Khillar Khachirov, and the western summit in 1874 by a British expedition led by F. Crauford Grove and including Frederick Gardner, Horace Walker, and the Swiss guide Peter Knubel.
+  </p1>
+  <cite>[From Wikipedia]</cite>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+
+      var req = new XMLHttpRequest;
+      req.open("GET", "https://cryptic-dusk-31004.herokuapp.com/scraper/Mount_Elbrus", false);
+      req.send(null);
+      img_url = req.responseText;
+      document.getElementById("Img").src = img_url;
+
+    </script>
+</body>
+
+</html>

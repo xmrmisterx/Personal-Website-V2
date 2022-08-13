@@ -1,0 +1,15 @@
+/* workout form styles */
+
+#workoutForm{
+    border: 2px solid rgb(4, 133, 83);
+    border-radius: 5px;
+    width: fit-content;
+}
+
+/* workout table styles */
+
+#header1{
+    border-style: solid;
+    border-color: rgb(8, 146, 238);
+    width: fit-content;
+}

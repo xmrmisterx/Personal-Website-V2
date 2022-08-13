@@ -1,0 +1,39 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Workout Log</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <br></br>
+  <p1>Welcome to my workout log page! Use the add workout form to add workouts to the workouts table. Edit a 
+    workout by typing in new information and clicking save. Delete a workout by clicking delete.</p1>
+  <br></br>
+  <div id="workoutForm">
+    <h1>Add Workout Form</h1>
+      <form id="addForm">
+        <label for="name">name</label>
+        <input type="text" name="name" id="name">
+        <label for="reps">reps</label>
+        <input type="number" name="reps" id="reps">
+        <label for="weight">weight</label>
+        <input type="number" name="weight" id="weight">
+        <label for="lbs">lbs</label>
+          <input id="lbs" type="radio" name="unit" value="0" checked="checked"/>
+        <label for="kgs">kgs</label>
+          <input id="kgs" type="radio" name="unit" value="1"/>
+        <input type="date" name="date" id="date">
+        <input type="submit" name="submit">
+      </form>
+      <br></br>
+  </div>
+  <br></br>
+  <h1 id="header1">Workouts Table</h1>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
