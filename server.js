@@ -5,7 +5,7 @@ var CORS = require('cors');
 var axios = require('axios');
 
 var app = express();
-app.use(express.static('public_html'));
+app.use(express.static('public'));
 
 // set local port for testing
 
