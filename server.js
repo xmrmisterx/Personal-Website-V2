@@ -4,6 +4,7 @@ var express = require('express');
 var mysql = require('./dbcon.js');
 var CORS = require('cors');
 var axios = require('axios');
+require('dotenv'). config();
 
 var app = express();
 app.use(express.static('public'));
@@ -11,6 +12,8 @@ app.use(express.static('public'));
 // set local port for testing
 
 // app.set('port', 5125);
+
+// console.log("process.env.APP_URL, ", process.env.APP_URL);
 
 // set heroku port for deployment
 
@@ -203,7 +206,7 @@ app.use(function(err, req, res, next){
 });
 
 app.listen(app.get('port'), function(){
-  console.log('Express started on http://localhost:' + app.get('port') + '; press Ctrl-C to terminate.');
+  console.log('Express started on http://localhost:' + app.get('port') + '; press Ctrl-C to terminate. process.env.APP_URL:', process.env.APP_URL);
 });
 
 

@@ -48,6 +48,7 @@ On September 2, 2015, the U.S. Geological Survey announced that the mountain is 
     <script>
 
       var req = new XMLHttpRequest;   
+      console.log("process.env.APP_URL: ", process.env.APP_URL);
       req.open("GET", process.env.APP_URL+"scraper/Denali", false);
       // req.open("GET", "https://cryptic-dusk-31004.herokuapp.com/scraper/Denali", false);
       req.send(null);
