@@ -134,10 +134,12 @@ app.get('/',function(req,res,next){
   mysql.pool.query(getAllQuery, (err, rows, fields) => {
     if(err){
       next(err);
+      console.log("query: ", getAllQuery, "failed...");
       return;
     }
     context.results = JSON.stringify(rows);
     res.set("Access-Control-Allow-Origin: *");
+    console.log("getallquery succeeded and sending back results: ", context.results);
     res.send(context);
   });
 });
