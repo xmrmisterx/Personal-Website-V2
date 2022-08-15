@@ -4,7 +4,7 @@ var express = require('express');
 var mysql = require('./dbcon.js');
 var CORS = require('cors');
 var axios = require('axios');
-require('dotenv'). config();
+// require('dotenv'). config();
 
 var app = express();
 app.use(express.static('public'));
@@ -115,6 +115,7 @@ const getAllData = (res) => {
       next(err);
       return;
     }
+    res.set("Access-Control-Allow-Origin: *");
     res.json({ "rows": rows });
   })
 }
@@ -136,6 +137,7 @@ app.get('/',function(req,res,next){
       return;
     }
     context.results = JSON.stringify(rows);
+    res.set("Access-Control-Allow-Origin: *");
     res.send(context);
   });
 });
@@ -184,6 +186,7 @@ app.put('/',function(req,res,next){
       return;
     }
     context.results = "Updated " + result.changedRows + " rows.";
+    res.set("Access-Control-Allow-Origin: *");
     res.send(context);
   });
 });
@@ -211,8 +214,10 @@ app.use(function(err, req, res, next){
 });
 
 app.listen(app.get('port'), function(){
-  console.log('Express started on http://localhost:' + app.get('port') + '; press Ctrl-C to terminate. process.env.APP_URL:', process.env.APP_URL);
+  console.log('Express started on http://localhost:' + app.get('port') + '; press Ctrl-C to terminate.');
 });
+
+
 
 
 
