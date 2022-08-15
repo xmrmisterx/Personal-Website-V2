@@ -1,6 +1,7 @@
 // create server URL variable
 
-const serverURL = "https://cryptic-dusk-31004.herokuapp.com/";
+const serverURL = "https://nguyenbo-personal-website.herokuapp.com/"; 
+// const serverURL = "https://cryptic-dusk-31004.herokuapp.com/";
 
 // create table and form variables
 
