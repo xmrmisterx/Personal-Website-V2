@@ -24,6 +24,10 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(CORS());
 
+// set server URL
+
+const serverURL = "https://nguyenbo-personal-website.herokuapp.com/"; 
+
 /* IMAGE SCRAPER FOR MOUNTAIN SITE CODE */
 
 // set variables for image scraper
@@ -118,7 +122,8 @@ const getAllData = (res) => {
 // create function to ping server every 30 mins to prevent Heroku app from sleeping (every 5 minutes is 300000 ms)
 
 setInterval(function() {
-  https.get("https://cryptic-dusk-31004.herokuapp.com");
+  https.get(serverURL);
+  // https.get("https://cryptic-dusk-31004.herokuapp.com");
 }, 1800000);
 
 // get request to get data
