@@ -436,7 +436,7 @@ const getData = () => {
 
     var req = new XMLHttpRequest();
     req.open("GET", serverURL, false);
-    req.send(null);
+    // req.send(null);
     var rows = JSON.parse(req.responseText);
     console.log("rows from getData: ", rows);
     return rows;
