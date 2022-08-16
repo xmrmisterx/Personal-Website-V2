@@ -1,6 +1,5 @@
 const { urlencoded } = require('body-parser');
 var express = require('express');
-// var mysql = require('dbcon.js');
 var mysql = require('./dbcon.js');
 var CORS = require('cors');
 var axios = require('axios');
@@ -131,7 +130,8 @@ setInterval(function() {
 
 // get request to get data
 
-app.get('/',function(req,res,next){
+app.get('/api',function(req,res,next){
+// app.get('/',function(req,res,next){
   var context = {};
   mysql.pool.query(getAllQuery, (err, rows, fields) => {
     if(err){
@@ -148,7 +148,8 @@ app.get('/',function(req,res,next){
 
 // post request to insert data
 
-app.post('/',function(req,res,next){
+app.post('/api',function(req,res,next){
+// app.post('/',function(req,res,next){
   var {name, reps, weight, unit, date, id} = req.body;
   mysql.pool.query(
     insertQuery, 
@@ -165,7 +166,8 @@ app.post('/',function(req,res,next){
 
 // delete request to delete row
 
-app.delete('/',function(req,res,next){
+app.delete('/api',function(req,res,next){
+// app.delete('/',function(req,res,next){
   var {id} = req.body;
   var context = {};
   mysql.pool.query(deleteQuery, [id], (err, result) => {
@@ -179,7 +181,8 @@ app.delete('/',function(req,res,next){
 
 // put request to edit row
 
-app.put('/',function(req,res,next){
+app.put('/api',function(req,res,next){
+// app.put('/',function(req,res,next){
   var context = {};
   var {name, reps, weight, unit, date, id} = req.body;
   mysql.pool.query(updateQuery,
@@ -197,7 +200,8 @@ app.put('/',function(req,res,next){
 
 // get request to reset table
 
-app.get('/reset-table',function(req,res,next){
+app.get('/api/reset-table',function(req,res,next){
+// app.get('/reset-table',function(req,res,next){
   var context = {};
   mysql.pool.query(dropTableQuery, function(err){
     mysql.pool.query(makeTableQuery, function(err){

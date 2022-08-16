@@ -1,6 +1,7 @@
 // create server URL variable
 
-const serverURL = "https://nguyenbo-personal-website.herokuapp.com/"; 
+const serverURL = "https://nguyenbo-personal-website.herokuapp.com/api"; 
+// const serverURL = "https://nguyenbo-personal-website.herokuapp.com/"; 
 // const serverURL = "https://cryptic-dusk-31004.herokuapp.com/";
 
 // create table and form variables
@@ -436,7 +437,7 @@ const getData = () => {
 
     var req = new XMLHttpRequest();
     req.open("GET", serverURL, false);
-    // req.send(null);
+    req.send(null);
     var rows = JSON.parse(req.responseText);
     console.log("rows from getData: ", rows);
     return rows;
