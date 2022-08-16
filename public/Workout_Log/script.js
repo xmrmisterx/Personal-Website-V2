@@ -438,6 +438,7 @@ const getData = () => {
     req.open("GET", serverURL, false);
     req.send(null);
     var rows = JSON.parse(req.responseText);
+    console.log("rows from getData: ", rows);
     return rows;
 }
 

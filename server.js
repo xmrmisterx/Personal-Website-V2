@@ -113,9 +113,11 @@ const getAllData = (res) => {
   mysql.pool.query(getAllQuery, (err, rows, fields) => {
     if (err){
       next(err);
+      console.log("getallData failed and error: ", err.message);
       return;
     }
     res.set("Access-Control-Allow-Origin: *");
+    console.log("getallData succeeded...");
     res.json({ "rows": rows });
   })
 }
