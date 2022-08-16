@@ -1,8 +1,6 @@
 // create server URL variable
 
 const serverURL = "https://nguyenbo-personal-website.herokuapp.com/api"; 
-// const serverURL = "https://nguyenbo-personal-website.herokuapp.com/"; 
-// const serverURL = "https://cryptic-dusk-31004.herokuapp.com/";
 
 // create table and form variables
 
@@ -439,7 +437,7 @@ const getData = () => {
     req.open("GET", serverURL, false);
     req.send(null);
     var rows = JSON.parse(req.responseText);
-    console.log("rows from getData: ", rows);
+    // console.log("rows from getData: ", rows);
     return rows;
 }
 
@@ -482,7 +480,7 @@ addForm.addEventListener("submit", function(){
 (async () => {
     let stringObject = await getData();
     let tableData = JSON.parse(stringObject.results);
-    console.log("tableData: ", tableData);
+    // console.log("tableData: ", tableData);
     makeTable(tableData);
 })();
 

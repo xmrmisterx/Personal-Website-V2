@@ -112,11 +112,9 @@ const getAllData = (res) => {
   mysql.pool.query(getAllQuery, (err, rows, fields) => {
     if (err){
       next(err);
-      console.log("getallData failed and error: ", err.message);
       return;
     }
     res.set("Access-Control-Allow-Origin: *");
-    console.log("getallData succeeded...");
     res.json({ "rows": rows });
   })
 }
@@ -125,23 +123,19 @@ const getAllData = (res) => {
 
 setInterval(function() {
   https.get(serverURL);
-  // https.get("https://cryptic-dusk-31004.herokuapp.com");
 }, 1800000);
 
 // get request to get data
 
 app.get('/api',function(req,res,next){
-// app.get('/',function(req,res,next){
   var context = {};
   mysql.pool.query(getAllQuery, (err, rows, fields) => {
     if(err){
       next(err);
-      console.log("query: ", getAllQuery, "failed...");
       return;
     }
     context.results = JSON.stringify(rows);
     res.set("Access-Control-Allow-Origin: *");
-    console.log("getallquery succeeded and sending back results: ", context.results);
     res.send(context);
   });
 });
@@ -149,7 +143,6 @@ app.get('/api',function(req,res,next){
 // post request to insert data
 
 app.post('/api',function(req,res,next){
-// app.post('/',function(req,res,next){
   var {name, reps, weight, unit, date, id} = req.body;
   mysql.pool.query(
     insertQuery, 
@@ -167,7 +160,6 @@ app.post('/api',function(req,res,next){
 // delete request to delete row
 
 app.delete('/api',function(req,res,next){
-// app.delete('/',function(req,res,next){
   var {id} = req.body;
   var context = {};
   mysql.pool.query(deleteQuery, [id], (err, result) => {
@@ -182,7 +174,6 @@ app.delete('/api',function(req,res,next){
 // put request to edit row
 
 app.put('/api',function(req,res,next){
-// app.put('/',function(req,res,next){
   var context = {};
   var {name, reps, weight, unit, date, id} = req.body;
   mysql.pool.query(updateQuery,
@@ -201,7 +192,6 @@ app.put('/api',function(req,res,next){
 // get request to reset table
 
 app.get('/api/reset-table',function(req,res,next){
-// app.get('/reset-table',function(req,res,next){
   var context = {};
   mysql.pool.query(dropTableQuery, function(err){
     mysql.pool.query(makeTableQuery, function(err){
