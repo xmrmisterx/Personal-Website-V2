@@ -25,7 +25,8 @@ app.use(CORS());
 
 // set server URL
 
-const serverURL = "https://nguyenbo-personal-website.herokuapp.com/"; 
+// const serverURL = "https://nguyenbo-personal-website.herokuapp.com/"; 
+const serverURL = "https://nguyenbo-website-d62b4830b849.herokuapp.com";
 
 /* IMAGE SCRAPER FOR MOUNTAIN SITE CODE */
 
