@@ -16,8 +16,8 @@ app.use(express.static('public'));
 
 // set heroku port for deployment
 
-var port = process.env.PORT || 8080;
-app.set('port', port);
+// var port = process.env.PORT || 8080;
+app.set('port', 5432);
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
