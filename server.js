@@ -26,7 +26,22 @@ app.use(CORS());
 // set server URL
 
 // const serverURL = "https://nguyenbo-personal-website.herokuapp.com/"; 
+
+// const serverURL = "http://localhost:5125/";
+// const serverURL = "http://localhost:5432/";
 const serverURL = "https://nguyenbo-website-d62b4830b849.herokuapp.com";
+
+const { Client } = require('pg');
+
+const client = new Client({
+  connectionString: process.env.serverURL,
+  // connectionString: process.env.DATABASE_URL,
+  ssl: {
+    rejectUnauthorized: false
+  }
+});
+
+client.connect();
 
 /* IMAGE SCRAPER FOR MOUNTAIN SITE CODE */
 
@@ -110,7 +125,8 @@ const makeTableQuery = `CREATE TABLE workout(
 // gets table data function
 
 const getAllData = (res) => { 
-  mysql.pool.query(getAllQuery, (err, rows, fields) => {
+  client.query(getAllQuery, (err, rows, fields) => {
+  // mysql.pool.query(getAllQuery, (err, rows, fields) => {
     if (err){
       next(err);
       return;
@@ -130,7 +146,8 @@ setInterval(function() {
 
 app.get('/api',function(req,res,next){
   var context = {};
-  mysql.pool.query(getAllQuery, (err, rows, fields) => {
+  client.query(getAllQuery, (err, rows, fields) => {
+  // mysql.pool.query(getAllQuery, (err, rows, fields) => {
     if(err){
       next(err);
       return;
@@ -145,7 +162,8 @@ app.get('/api',function(req,res,next){
 
 app.post('/api',function(req,res,next){
   var {name, reps, weight, unit, date, id} = req.body;
-  mysql.pool.query(
+  client.query(
+  // mysql.pool.query(
     insertQuery, 
     [name, reps, weight, unit, date, id],
     (err, result) => {
@@ -163,7 +181,8 @@ app.post('/api',function(req,res,next){
 app.delete('/api',function(req,res,next){
   var {id} = req.body;
   var context = {};
-  mysql.pool.query(deleteQuery, [id], (err, result) => {
+  client.query(deleteQuery, [id], (err, result) => {
+  // mysql.pool.query(deleteQuery, [id], (err, result) => {
     if(err){
       next(err);
       return;
@@ -177,7 +196,8 @@ app.delete('/api',function(req,res,next){
 app.put('/api',function(req,res,next){
   var context = {};
   var {name, reps, weight, unit, date, id} = req.body;
-  mysql.pool.query(updateQuery,
+  client.query(updateQuery,
+  // mysql.pool.query(updateQuery,
       [name, reps, weight, unit, date, id],
     (err, result) => {
     if(err){
@@ -194,8 +214,10 @@ app.put('/api',function(req,res,next){
 
 app.get('/api/reset-table',function(req,res,next){
   var context = {};
-  mysql.pool.query(dropTableQuery, function(err){
-    mysql.pool.query(makeTableQuery, function(err){
+  client.query(dropTableQuery, function(err){
+    client.query(makeTableQuery, function(err){
+  // mysql.pool.query(dropTableQuery, function(err){
+  //   mysql.pool.query(makeTableQuery, function(err){
       console.log("table reset");
     })
   });
