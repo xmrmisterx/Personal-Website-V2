@@ -10,14 +10,14 @@ app.use(express.static('public'));
 
 // set local port for testing
 
-// app.set('port', 5125);
+app.set('port', 5125);
 
 // console.log("process.env.APP_URL, ", process.env.APP_URL);
 
 // set heroku port for deployment
 
 // var port = process.env.PORT || 8080;
-app.set('port', 5432);
+// app.set('port', 5432);
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -27,15 +27,15 @@ app.use(CORS());
 
 // const serverURL = "https://nguyenbo-personal-website.herokuapp.com/"; 
 
-// const serverURL = "http://localhost:5125/";
+const serverURL = "http://localhost:5125/";
 // const serverURL = "http://localhost:5432/";
-const serverURL = "https://nguyenbo-website-d62b4830b849.herokuapp.com";
+// const serverURL = "https://nguyenbo-website-d62b4830b849.herokuapp.com";
 
 const { Client } = require('pg');
 
 const client = new Client({
-  connectionString: process.env.serverURL,
-  // connectionString: process.env.DATABASE_URL,
+  // connectionString: process.env.serverURL,
+  connectionString: process.env.DATABASE_URL,
   ssl: {
     rejectUnauthorized: false
   }
