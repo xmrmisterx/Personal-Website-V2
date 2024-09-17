@@ -1,7 +1,9 @@
 // create server URL variable
 
 // const serverURL = "https://nguyenbo-personal-website.herokuapp.com/api"; 
-const serverURL = "https://nguyenbo-website-d62b4830b849.herokuapp.com/api"; 
+// const serverURL = "https://nguyenbo-website-d62b4830b849.herokuapp.com/api"; 
+const serverURL = "postgres://ue4ladd0heslkf:p885b1ed81a9e330617033050d23165f0a50d441f71d06fa88839040452afb112@caij57unh724n3.cluster-czrs8kj4isg7.us-east-1.rds.amazonaws.com:5432/d9uhqmpgn3to31";
+
 
 
 // create table and form variables
