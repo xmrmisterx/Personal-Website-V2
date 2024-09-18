@@ -451,6 +451,7 @@ const insertData = () => {
     req.open("POST", serverURL, false);
     req.setRequestHeader('Content-Type', 'application/json');
     var JSONObject = getObject(addForm);
+    console.log('JSONObject:', JSONObject);
     req.send(JSONObject);
     var rows = JSON.parse(req.responseText)
 }
