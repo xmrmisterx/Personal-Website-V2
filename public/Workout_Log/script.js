@@ -440,6 +440,7 @@ const getData = () => {
     var req = new XMLHttpRequest();
     req.open("GET", serverURL, false);
     req.send(null);
+    console.log('getData response:', req.responseText);
     var rows = JSON.parse(req.responseText);
     // console.log("rows from getData: ", rows);
     return rows;
