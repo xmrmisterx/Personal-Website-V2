@@ -109,7 +109,9 @@ app.get('/scraper/:str', (req, res) => {
 /* WORKOUT LOG CODE */
 
 const getAllQuery = 'SELECT * FROM workout';
-const insertQuery = "INSERT INTO workout (`name`, `reps`, `weight`, `unit`, `date`) VALUES (?, ?, ?, ?, ?)";
+const insertQuery = "INSERT INTO workout ('name', 'reps', 'weight', 'unit', 'date') VALUES ($1, $2, $3, $4, $5)";
+
+// const insertQuery = "INSERT INTO workout (`name`, `reps`, `weight`, `unit`, `date`) VALUES (?, ?, ?, ?, ?)";
 const updateQuery = "UPDATE workout SET name=?, reps=?, weight=?, unit=?, date=? WHERE id=?";
 const deleteQuery = "DELETE FROM workout WHERE id=?";
 const dropTableQuery = "DROP TABLE IF EXISTS workout";
