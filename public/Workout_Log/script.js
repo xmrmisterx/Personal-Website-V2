@@ -442,7 +442,7 @@ const getData = () => {
     req.send(null);
     console.log('getData response:', req.responseText);
     var rows = JSON.parse(req.responseText);
-    // console.log("rows from getData: ", rows);
+    console.log("rows from getData: ", rows);
     return rows;
 }
 
@@ -469,6 +469,7 @@ addForm.addEventListener("submit", function(){
     (async () => {
         let stringObject = await getData();
         let tableData = JSON.parse(stringObject.results);
+        console.log('tableData:', tableData);
 
         // get table element
 
