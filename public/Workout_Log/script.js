@@ -476,8 +476,8 @@ addForm.addEventListener("submit", function(){
         var table = document.getElementById("workoutsTable"); 
 
         deleteTable(table);
-
-        makeTable(tableData);
+        makeTable(tableData.rows);
+        // makeTable(tableData);
     })();
 
 });
@@ -489,6 +489,7 @@ addForm.addEventListener("submit", function(){
     console.log('stringObject:', stringObject);
     let tableData = JSON.parse(stringObject.results);
     console.log("tableData: ", tableData);
-    makeTable(tableData);
+    // makeTable(tableData);
+    makeTable(tableData.rows);
 })();
 
