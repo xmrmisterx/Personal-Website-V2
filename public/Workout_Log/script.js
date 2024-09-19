@@ -485,8 +485,9 @@ addForm.addEventListener("submit", function(){
 
 (async () => {
     let stringObject = await getData();
+    console.log('stringObject:', stringObject);
     let tableData = JSON.parse(stringObject.results);
-    // console.log("tableData: ", tableData);
+    console.log("tableData: ", tableData);
     makeTable(tableData);
 })();
 
