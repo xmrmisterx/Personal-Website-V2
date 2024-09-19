@@ -164,11 +164,13 @@ app.get('/api',function(req,res,next){
 // post request to insert data
 
 app.post('/api',function(req,res,next){
-  var {name, reps, weight, unit, date, id} = req.body;
+  var {name, reps, weight, unit, date} = req.body;
+  // var {name, reps, weight, unit, date, id} = req.body;
   client.query(
   // mysql.pool.query(
     insertQuery, 
-    [name, reps, weight, unit, date, id],
+    [name, reps, weight, unit, date],
+    // [name, reps, weight, unit, date, id],
     (err, result) => {
       if(err){
         next(err);
